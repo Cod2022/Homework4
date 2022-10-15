@@ -1,14 +1,14 @@
-n = 37
-list1 = [i for i in range(1, n+1)]
-list2 = []
-list3 = []
-for i in list1:
-    if n % i == 0:
-        list2.append(i)
-    else:
-        del list1 [1:-1]
+number = int(input('Введите число: '))
 
-list2 = [i for i in list2[1:]]
+def prime_factors_list(number):
+    list1 = list()
+    div = 2
+    while div <= number:
+        if number % div == 0:
+            list1.append(div)
+            number = number / div
+        else:
+            div +=1
+    return list1
 
-print(list2)
-print(list1)
+print(f'Простые делители для числа {number}: {prime_factors_list(number)}')
